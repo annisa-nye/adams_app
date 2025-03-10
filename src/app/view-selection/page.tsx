@@ -8,7 +8,7 @@ export default function ViewSelection() {
 	return (
 		<div className='flex flex-col items-center justify-center h-screen bg-gray-900 text-white'>
 			<h1 className='text-3xl mb-6'>
-				How would you like to view the memories?
+				How would you l ike to view the memories?
 			</h1>
 			<button
 				onClick={() => router.push('/world-map')}
