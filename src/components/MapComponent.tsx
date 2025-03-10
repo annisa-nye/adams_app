@@ -102,10 +102,13 @@ export default function MapComponent() {
 								{images.map((image) => (
 									<div key={image} className='relative aspect-square'>
 										<Image
-											src={`/images/${image}`}
+											src={`https://nye-memories.s3.ap-southeast-2.amazonaws.com/memories/${image}`}
 											alt={image}
 											fill
 											className='object-cover rounded'
+											// @TODO: optimize these properties for faster loading
+											// width={100}
+											// height={100}
 										/>
 									</div>
 								))}
