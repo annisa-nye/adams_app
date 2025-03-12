@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Home() {
 	const [password, setPassword] = useState('');
@@ -10,7 +11,7 @@ export default function Home() {
 	const [errorMessage, setErrorMessage] = useState('');
 	const [showMessage, setShowMessage] = useState(false);
 	const router = useRouter();
-	const correctPassword = '0811936201'; // Your dad’s phone number
+	const correctPassword = '000'; // Your dad's phone number
 
 	const handleLogin = () => {
 		if (password === correctPassword) {
@@ -29,9 +30,19 @@ export default function Home() {
 	return (
 		<div className='flex flex-col items-center justify-center h-screen bg-gray-900 text-white'>
 			{showMessage ? (
-				<h1 className='text-3xl font-bold text-center animate-pulse'>
-					🎉 Happy 24th Birthday, Adam! 🎉
-				</h1>
+				<div className='text-center'>
+					<h1 className='text-3xl font-bold animate-pulse mb-8'>
+						🎉 Happy 24th Birthday, Adam! 🎉
+					</h1>
+					<Image
+						src='/slideshow/adam_0.jpg'
+						alt='Birthday Image'
+						width={500}
+						height={300}
+						className='rounded-lg shadow-lg'
+						priority
+					/>
+				</div>
 			) : (
 				<>
 					<h1 className='text-2xl mb-4'>Enter Password</h1>
